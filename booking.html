@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmasco Travels</title>
+  <Link rel="stylesheet" href="CSS/build.css">
+    <script src="https://kit.fontawesome.com/c0a8c3a25b.js" crossorigin="anonymous"></script> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">   
+</head>
+<body>
+  <section class="header">
+    <nav class="nav">
+        <h5>EMMASCO TRAVELS</h5>
+         <div class="navLinks" id="navLinks">
+          <i class="fa-solid fa-square-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html" class="nav-button active">HOME</a></li>
+            <li><a href="about.html" class="nav-button active">ABOUT</a></li>
+            <li><a href="services.html" class="nav-button active">SERVICES</a></li>
+            <li><a href="packages.html" class="nav-button active">PACKAGES</a></li>
+            <li><a href="booking.html" class="nav-button active">BOOKING</a></li>
+            <li><a href="contact.html" class="nav-button active">CONTACT</a></li>
+            <li><a href="login.html" class="nav-button active"><i class="fa-solid fa-user"></i></a></li>
+          </ul>
+         </div>
+         <i class="fa-solid fa-bars" onclick="showMenu()"></i> 
+     
+    </nav>
+
+  </section>
+
+
+  <section id="booking" class="booking">
+    <h2>Book Your Package</h2>
+    <form id="booking-form">
+      <p>Package: <span id="package-name"></span></p>
+      <p>Package Type:</p>
+      <select id="package-type" name="package-type">
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+        <option value="executive">Executive</option>
+      </select>
+      <p id="package-details"></p>
+      <p>Price: $<span id="package-price"></span></p>
+      <label for="travel-type">Travel Type:</label>
+      <select id="travel-type" name="travel-type">
+        <option value="single">Single Person</option>
+        <option value="couple">Couple</option>
+        <option value="family">Family (3-4 people)</option>
+        <option value="couple">Students</option>
+        <option value="family">Children (5-12 years)($800)</option>
+      </select>
+      <label for="number-of-people">Number of People:</label>
+      <input type="number" id="number-of-people" name="number-of-people" value="0">
+      <p id="total-cost">Total Cost: $<span id="total-cost-value">0</span></p>
+      <button type="submit" id="">Book Now</button>
+
+    </form>
+  </section>
+  
+
+<footer class="footer">
+    <div class="footer__card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+      <h3 class="footer__card-title">Our Sites</h3>
+      <p class="footer__card-info"><a href="https://wa.me/qr/GXCZ4ZZLRYKRC1"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Whatsapp</a></p>
+      <p class="footer__card-info"><a href="https://www.facebook.com/profile.php?id=100092337223964"><i class="fab fa-facebook"></i>&nbsp;&nbsp;Facebook</a></p>
+      <p class="footer__card-info"><a href="https://www.instagram.com/koopoowbentsil5?igsh=OWk2dmFqaXhudnRt"><i class="fab fa-instagram"></i>&nbsp;&nbsp;Instagram</a></p>
+      <p class="footer__card-info"><a href="https://www.youtube.com/channel/UCwPr0UZlyH4PjUoQs7YjIsw"><i class="fab fa-youtube"></i>&nbsp;&nbsp;YouTube</a></p>
+    </div>
+    <div class="footer__card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+      <h3 class="footer__card-title">Team</h3>
+      <a href="about.html#testimonials"><p class="footer__card-info">Testimonials</p></a>
+      <a href="login.html"><p class="footer__card-info">Login</p></a>
+      <a href="services.html#travel-tips"><p class="footer__card-info">Travel Tips</p></a>
+      <a href="policies.html"><p class="footer__card-info">Privacy Policy</p></a>
+      <a href="payment.html"><p class="footer__card-info">Payment & Refunds</p></a><br>
+    </div>
+    
+    <div class="footer__card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+      <h3 class="footer__card-title">Quick Links</h3> 
+      <a href="about.html"><p class="footer__card-info">About</p></a>
+      <a href="services.html"><p class="footer__card-info">Services</p></a>
+      <a href="packages.html"><p class="footer__card-info">Packages</p></a>
+      <a href="booking.html"><p class="footer__card-info">Booking</p></a>
+      <a href="contact.html"><p class="footer__card-info">Contact</p></a>
+    </div>
+  </footer>
+  <div class="down">
+  <input type="email" id="email" placeholder="Your email" required><button id="subscribe-btn">Subscribe</button><br><br><br>
+  <p class="footer__card-push">&copy;2025 Emmasco Travels. All rights reserved.</p>
+  </div>
+
+
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const packageName = urlParams.get('package');
+  const packagePriceBasic = urlParams.get('price-basic');
+  const packagePricePremium = urlParams.get('price-premium');
+  const packagePriceExecutive = urlParams.get('price-executive');
+
+  if (packageName && packagePriceBasic && packagePricePremium && packagePriceExecutive) {
+    document.getElementById('package-name').textContent = packageName;
+    const packageTypeSelect = document.getElementById('package-type');
+    const packageDetails = document.getElementById('package-details');
+    const packagePrice = document.getElementById('package-price');
+
+    packageTypeSelect.addEventListener('change', updatePackageDetails);
+
+    function updatePackageDetails() {
+      const packageType = packageTypeSelect.value;
+      let packagePriceValue;
+      let packageDetailsText;
+
+
+if (packageType === 'basic') {
+  packagePriceValue = packagePriceBasic;
+  packageDetailsText = "2 days, 1 night package includes " + "\n" + "\n" + 
+    "Private villa stay with scenic views." + "\n" + "\n" + 
+    "Gourmet breakfast and sunset dinner." + "\n" + "\n" + 
+    "Guided nature walk and birdwatching.";
+} else if (packageType === 'premium') {
+  packagePriceValue = packagePricePremium;
+  packageDetailsText = "3 days, 2 nights package includes " + "\n" + "\n" + 
+    "Luxury suite with private balcony." + "\n" + "\n" + 
+    "Full board meals with wine pairing." + "\n" + "\n" + 
+    "Private guided tour and outdoor activities.";
+} else if (packageType === 'executive') {
+  packagePriceValue = packagePriceExecutive;
+  packageDetailsText = "5 days, 4 nights package includes" + "\n" + "\n" + 
+    "Exclusive villa with private pool." + "\n" + "\n" + 
+    "Personalized butler service." + "\n" + "\n" + 
+    "Guided adventure activities and team-building exercises." + "\n" + "\n" + 
+    "Private chef and customized meals.";
+}
+
+      packagePrice.textContent = packagePriceValue;
+      packageDetails.textContent = packageDetailsText;
+
+      const numberOfPeopleInput = document.getElementById('number-of-people');
+      const travelTypeSelect = document.getElementById('travel-type');
+      const totalCostValue = document.getElementById('total-cost-value');
+
+      numberOfPeopleInput.addEventListener('input', calculateTotalCost);
+      travelTypeSelect.addEventListener('change', calculateTotalCost);
+
+      function calculateTotalCost() {
+        const numberOfPeople = parseInt(numberOfPeopleInput.value);
+        const travelType = travelTypeSelect.value;
+        let multiplier = 1;
+
+        if (travelType === 'couple') {
+          multiplier = 2;
+        } else if (travelType === 'family') {
+          multiplier = 3;
+        }else if (travelType === 'students') {
+          multiplier = 4;
+        }else if (travelType === 'children') {
+          multiplier = 5;
+        }  
+
+        const totalCost = parseFloat(packagePriceValue) * numberOfPeople * multiplier;
+        totalCostValue.textContent = totalCost;
+        document.getElementById('total-cost').textContent = `Total Cost: $${totalCost}`;
+      }
+    }
+
+    // Initialize package details and price
+    updatePackageDetails();
+  }
+});
+
+
+</script>
+
+  <script>
+    document.getElementById('subscribe-btn').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    if (email) {
+      alert('Thank you for subscribing!');
+    } else {
+      alert('Please enter your email ❌');
+    }
+  });
+  
+  </script>
+  
+
+<script>
+  
+    var menu = document.getElementById("navLinks");
+              if (window.matchMedia("(min-width: 700px)").matches) {
+                menu.style.display = "block"; // Show menu
+            } else {
+              menu.style.display = "none"; // Hide menu
+        }
+    
+             function showMenu() {
+                 document.querySelector('.navLinks').style.display = 'block';
+             }
+             function hideMenu() {
+                 document.querySelector('.navLinks').style.display = 'none';
+             }
+             </script>
+
+<script>
+
+// Get elements
+const registerForm = document.querySelector('#register form');
+const loginForm = document.querySelector('#login form');
+
+// Register functionality
+if (registerForm) {
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = registerForm.querySelector('#name').value;
+    const email = registerForm.querySelector('#email').value;
+    const password = registerForm.querySelector('#password').value;
+    const phone = registerForm.querySelector('#phone').value;
+    const address = registerForm.querySelector('#address').value;
+
+    // Validate input
+    if (name && email && password && phone && address) {
+      // Store user data in local storage
+      localStorage.setItem('user', JSON.stringify({ name, email, password, phone, address }));
+      alert('Registration successful!');
+      // Redirect to login page
+      window.location.href = '#login';
+    } else {
+      alert('Please fill out all fields.');
+    }
+  });
+}
+
+// Login functionality
+if (loginForm) {
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = loginForm.querySelector('#username').value;
+    const password = loginForm.querySelector('#password').value;
+
+    // Get stored user data
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
+    // Validate input
+    if (username === storedUser?.name && password === storedUser?.password) {
+      alert('Login successful!');
+      // Redirect to packages page
+      window.location.href = '#packages';
+    } else {
+      alert('Invalid username or password.');
+    }
+  });
+}
+
+// Booking functionality
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const bookingForm = document.getElementById('booking-form');
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const packagePrice = parseFloat(document.getElementById('package-price').textContent);
+      const numberOfPeople = parseInt(document.getElementById('number-of-people').value);
+      const travelType = document.getElementById('travel-type').value;
+      let multiplier = 1;
+      if (travelType === 'couple') {
+        multiplier = 2;
+      } else if (travelType === 'family') {
+        multiplier = 3;
+      }
+      const totalCost = packagePrice * numberOfPeople * multiplier;
+      window.location.href = `payment.html?totalCost=${totalCost}`;
+    });
+  }
+});
+
+
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 800,
+    delay: 400
+  });
+</script>
+</body>
+</html>

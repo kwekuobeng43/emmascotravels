@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmasco Travels</title>
+    <Link rel="stylesheet" href="CSS/build.css">
+      <script src="https://kit.fontawesome.com/c0a8c3a25b.js" crossorigin="anonymous"></script> 
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">     
+</head>
+<body>
+  <section class="header">
+    <nav class="nav">
+        <h5>EMMASCO TRAVELS</h5>
+         <div class="navLinks" id="navLinks">
+          <i class="fa-solid fa-square-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html" class="nav-button active">HOME</a></li>
+            <li><a href="about.html" class="nav-button active">ABOUT</a></li>
+            <li><a href="services.html" class="nav-button active">SERVICES</a></li>
+            <li><a href="packages.html" class="nav-button active">PACKAGES</a></li>
+            <li><a href="booking.html" class="nav-button active">BOOKING</a></li>
+            <li><a href="contact.html" class="nav-button active">CONTACT</a></li>
+            <li><a href="login.html" class="nav-button active"><i class="fa-solid fa-user"></i></a></li>
+          </ul>
+         </div>
+         <i class="fa-solid fa-bars" onclick="showMenu()"></i> 
+     
+    </nav>
+
+  </section>
+
+   <div class="in">
+    <h1>Fill out these to Register</h1>
+   </div>
+  <section id="register" class="register">
+    <h2>Register</h2>
+    <form>
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" required>
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <label for="phone">Phone</label>
+        <input type="phone" id="phone" name="phone" required>
+        <input type="submit" value="Register"><br><br>
+        <p>Forgot Email?<a href="phoneNumber.html">&nbsp;&nbsp;Phone Number</a></p>
+
+
+    </form>
+</section>
+<footer class="footer">
+  <div class="footer__card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+    <h3 class="footer__card-title">Our Sites</h3>
+    <p class="footer__card-info"><a href="https://wa.me/qr/GXCZ4ZZLRYKRC1"><i class="fab fa-whatsapp"></i>&nbsp;&nbsp;Whatsapp</a></p>
+    <p class="footer__card-info"><a href="https://www.facebook.com/profile.php?id=100092337223964"><i class="fab fa-facebook"></i>&nbsp;&nbsp;Facebook</a></p>
+    <p class="footer__card-info"><a href="https://www.instagram.com/koopoowbentsil5?igsh=OWk2dmFqaXhudnRt"><i class="fab fa-instagram"></i>&nbsp;&nbsp;Instagram</a></p>
+    <p class="footer__card-info"><a href="https://www.youtube.com/channel/UCwPr0UZlyH4PjUoQs7YjIsw"><i class="fab fa-youtube"></i>&nbsp;&nbsp;YouTube</a></p>
+  </div>
+  <div class="footer__card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+    <h3 class="footer__card-title">Team</h3>
+    <a href="about.html#testimonials"><p class="footer__card-info">Testimonials</p></a>
+      <a href="login.html"><p class="footer__card-info">Login</p></a>
+      <a href="services.html#travel-tips"><p class="footer__card-info">Travel Tips</p></a>
+    <a href="policies.html"><p class="footer__card-info">Privacy Policy</p></a>
+    <a href="payment.html"><p class="footer__card-info">Payment & Refunds</p></a><br>
+  </div>
+  
+  <div class="footer__card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+    <h3 class="footer__card-title">Quick Links</h3> 
+    <a href="about.html"><p class="footer__card-info">About</p></a>
+    <a href="services.html"><p class="footer__card-info">Services</p></a>
+    <a href="packages.html"><p class="footer__card-info">Packages</p></a>
+    <a href="booking.html"><p class="footer__card-info">Booking</p></a>
+    <a href="contact.html"><p class="footer__card-info">Contact</p></a>
+  </div>
+</footer>
+<div class="down">
+<input type="email" id="email" placeholder="Your email" required><button id="subscribe-btn">Subscribe</button><br><br><br>
+<p class="footer__card-push">&copy;2025 Emmasco Travels. All rights reserved.</p>
+</div>
+
+<script>
+  document.getElementById('subscribe-btn').addEventListener('click', function() {
+  const email = document.getElementById('email').value;
+  if (email) {
+    alert('Thank you for subscribing!');
+  } else {
+    alert('Please enter your email ❌');
+  }
+});
+
+</script>
+
+
+
+<script>
+
+var menu = document.getElementById("navLinks");
+          if (window.matchMedia("(min-width: 700px)").matches) {
+            menu.style.display = "block"; // Show menu
+        } else {
+          menu.style.display = "none"; // Hide menu
+    }
+
+         function showMenu() {
+             document.querySelector('.navLinks').style.display = 'block';
+         }
+         function hideMenu() {
+             document.querySelector('.navLinks').style.display = 'none';
+         }
+         </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 800,
+    delay: 400
+  });
+</script>
+</body>
+</html>

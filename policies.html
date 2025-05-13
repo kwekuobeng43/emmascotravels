@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmasco Travels</title>
+    <Link rel="stylesheet" href="CSS/build.css">
+      <script src="https://kit.fontawesome.com/c0a8c3a25b.js" crossorigin="anonymous"></script> 
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<Link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> 
+</head>
+<body>
+  <section class="header">
+    <nav class="nav">
+        <h5>EMMASCO TRAVELS</h5>
+         <div class="navLinks" id="navLinks">
+          <i class="fa-solid fa-square-xmark" onclick="hideMenu()"></i>
+
+        <ul>
+          <li><a href="index.html" class="nav-button active">HOME</a></li>
+          <li><a href="about.html" class="nav-button active">ABOUT</a></li>
+          <li><a href="services.html" class="nav-button active">SERVICES</a></li>
+          <li><a href="packages.html" class="nav-button active">PACKAGES</a></li>
+          <li><a href="booking.html" class="nav-button active">BOOKING</a></li>
+          <li><a href="contact.html" class="nav-button active">CONTACT</a></li>
+          <li><a href="login.html" class="nav-button active"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+        
+         </div>
+         <i class="fa-solid fa-bars" onclick="showMenu()"></i> 
+     
+    </nav>
+
+  </section>
+
+  <div class="policies">
+    <h1>Emmasco Travels Policies</h1>
+    <h2>Refund Policy</h2>
+    <ol class="policy-list">
+      <li class="policy-item">Full refunds will be issued for cancellations made at least 30 days prior to departure.</li>
+      <li class="policy-item">Partial refunds (50%) will be issued for cancellations made between 15-29 days prior to departure.</li>
+      <li class="policy-item">No refunds will be issued for cancellations made within 14 days of departure.</li>
+    </ol>
+    <h2>Cancellation Policy</h2>
+    <ol class="policy-list">
+      <li class="policy-item">Cancellations made 30 days or more prior to departure will incur no penalty.</li>
+      <li class="policy-item">Cancellations made 15-29 days prior to departure will incur a 20% cancellation fee.</li>
+      <li class="policy-item">Cancellations made within 14 days of departure will incur a 50% cancellation fee.</li>
+    </ol>
+    <h2>Payment Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Payment methods accepted</li>
+        <li class="policy-item">Payment terms and deadlines</li>
+        <li class="policy-item">Late payment fees</li>
+      </ol>
+      <h2>Travel Documentation Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Requirements for passports, visas, and other travel documents</li>
+        <li class="policy-item">Responsibility for obtaining necessary documents</li>
+      </ol>
+      <h2>Cancellation by Emmasco Travels Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Circumstances under which Emmasco Travels may cancel a trip</li>
+        <li class="policy-item">Refund or rescheduling options</li>
+      </ol>
+      <h2>Force Majeure Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Events beyond Emmasco Travels' control (e.g., natural disasters, wars)</li>
+        <li class="policy-item">Procedures for handling such events</li>
+      </ol>
+      <h2>Liability Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Limitations of liability for Emmasco Travels</li>
+        <li class="policy-item">Passenger responsibility for their own actions</li>
+      </ol>
+      <h2>Privacy Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Collection and use of personal data</li>
+        <li class="policy-item">Data protection measures</li>
+      </ol>
+      <h2>Complaints and Dispute Resolution Policy</h2>
+    <ol class="policy-list">
+        <li class="policy-item">Procedure for filing complaints</li>
+        <li class="policy-item">Dispute resolution process</li>
+      </ol>
+      
+  </div>
+
+
+
+
+
+
+  <script>
+  
+    var menu = document.getElementById("navLinks");
+              if (window.matchMedia("(min-width: 700px)").matches) {
+                menu.style.display = "block"; // Show menu
+            } else {
+              menu.style.display = "none"; // Hide menu
+        }
+    
+             function showMenu() {
+                 document.querySelector('.navLinks').style.display = 'block';
+             }
+             function hideMenu() {
+                 document.querySelector('.navLinks').style.display = 'none';
+             }
+             </script>
+    
+</body>
+</html>
